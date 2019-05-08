@@ -1,0 +1,19 @@
+<nav class="navbar navbar-expand-md navbar-light bg-success fixed-top">
+  <a class="navbar-brand" >Welcome To My Friend App!</a>
+    <div>
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/">Home</a>
+        </li>
+        <li class="nav-item" *ngIf="authService.loggedIn">
+          <a class="nav-link" routerLink="/friend">Friends</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/contactUs">Contact Me</a>
+        </li>
+        <li>
+          <a class="nav-link" (click)="onLogout()">[Logout]</a>
+        </li>
+    </ul>
+  </div>
+</nav>

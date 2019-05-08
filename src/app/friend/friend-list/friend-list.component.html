@@ -1,0 +1,26 @@
+<h4>My Friends</h4>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+        Search: <input type="text" [(ngModel)]="searchStr">
+        <table class="table">
+          <thead>
+          <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Contact</th>
+          </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let friend of myFriends | find:'name':searchStr; let i = index" [appHoverHighlight]="{background:'pink', text:'black'}">
+              <th scope="row">{{ (i + 1) }}</th>
+              <td>{{ friend.name | uppercase }}</td>
+              <td>{{ friend.name }}</td>
+              <td>{{ friend.contact }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
